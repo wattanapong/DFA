@@ -1,0 +1,64 @@
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+            attack_search: False                         
+               batch_size: 1                             
+                      cfg: ../siamrpn_r50_l234_dwxcorr_otb/config_DFA.yaml	[default: config.yaml]
+          checkpoints_dir: ./checkpoints                 
+                      chk: 24                            	[default: 1]
+                crop_size: 256                           
+                 dataroot: ./pix2pix/datasets/facades    
+                  dataset: OTB100                        
+              dataset_dir: /4T/dataset/TrackingTest      	[default: /media/wattanapongsu/4T/dataset]
+             dataset_mode: aligned                       
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+             export_video: True                          	[default: False]
+           fabricated_dir:                               
+                 gan_mode: lsgan                         
+                   gpu_id: -1                            	[default: -1]
+                  gpu_ids: 0                             
+                     gpus: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: False                         	[default: None]
+                        k: 0.0                           	[default: 1]
+                       ks: 0.0                           	[default: 1]
+                lambda_L1: 500                           
+                load_iter: 0                             	[default: 0]
+                load_size: 256                           
+         max_dataset_size: inf                           
+                    model: test                          
+               model_name: enc_5e2_512                   	[default: ]
+             model_search: False                         
+               n_layers_D: 3                             
+                     name: DFA                           
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_128                      
+          netG_pretrained: checkpoint24_m.pth            	[default: ]
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: batch                         
+                    ntest: inf                           
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 3                             
+                    phase: test                          
+                pool_size: 0                             
+               preprocess: resize_and_crop               
+              results_dir: ./results/                    
+                saved_dir: /4T/temp/save                 	[default: ]
+            search_attack: False                         
+           serial_batches: False                         
+                 snapshot: /4T/models/pysot/siamrpn_r50_otb_model.pth	[default: ]
+                   suffix:                               
+                  verbose: False                         
+                    video: Bird1                         	[default: ]
+                      vis: False                         
+                     vram: 100                           
+                   z_size: 512                           	[default: 128]
+----------------- End -------------------

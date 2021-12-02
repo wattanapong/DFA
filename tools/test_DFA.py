@@ -18,7 +18,7 @@ import pdb
 import cv2
 import torch
 import torch.nn as nn
-from tensorboardX import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 from pysot.utils.log_helper import init_log, print_speed, add_file_handler
 from pysot.utils.model_load import load_pretrain
 from pysot.utils.misc import commit

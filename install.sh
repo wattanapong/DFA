@@ -28,8 +28,6 @@ conda install -y pytorch=0.4.1 torchvision cuda90 -c pytorch
 pip install opencv-python
 # tensorboardX
 
-echo "***** install other libs *****"
-pip install tensorboardX
 # libs
 pip install pyyaml yacs tqdm colorama matplotlib cython
 

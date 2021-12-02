@@ -14,7 +14,7 @@
           display_winsize: 256                           
                     epoch: latest                        
                      eval: False                         
-             export_video: True                          	[default: False]
+             export_video: False                         
            fabricated_dir:                               
                  gan_mode: lsgan                         
                    gpu_id: -1                            	[default: -1]
@@ -25,7 +25,7 @@
                  input_nc: 3                             
                   isTrain: False                         	[default: None]
                         k: 0.0                           	[default: 1]
-                       ks: 0.0                           	[default: 1]
+                       ks: 2.0                           	[default: 1]
                 lambda_L1: 500                           
                 load_iter: 0                             	[default: 0]
                 load_size: 256                           
@@ -52,12 +52,12 @@
                preprocess: resize_and_crop               
               results_dir: ./results/                    
                 saved_dir: /4T/temp/save                 	[default: ]
-            search_attack: False                         
+            search_attack: True                          	[default: False]
            serial_batches: False                         
                  snapshot: /4T/models/pysot/siamrpn_r50_otb_model.pth	[default: ]
                    suffix:                               
                   verbose: False                         
-                    video: Bird1                         	[default: ]
+                    video:                               
                       vis: False                         
                      vram: 100                           
                    z_size: 512                           	[default: 128]

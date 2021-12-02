@@ -2,7 +2,7 @@ ROOT=`git rev-parse --show-toplevel`
 export PYTHONPATH=$ROOT:$PYTHONPATH
 
 #
-const=(0)
+const=(1)
 chk=24
 for i in ${const[*]};
     do
@@ -14,12 +14,13 @@ for i in ${const[*]};
            --dataset OTB100 \
           --dataset_dir /4T/dataset/TrackingTest \
            --snapshot /4T/models/pysot/siamrpn_r50_otb_model.pth \
-           --model_name enc_5e2_512 --k $i --ks 0 --chk $j --z_size 512\
+           --model_name enc_5e2_512 --k $i --ks 2.0 --chk $j --z_size 512\
            --netG_pretrained  checkpoint${j}_m.pth\
-           --export_video --video Bird1 --search_attack \
+            --search_attack \
             --saved_dir /4T/temp/save
       done
 done
+#  --export_video --video Biker \
 #test_template_w_tracker
 #  --ks 1   --search_attack
 

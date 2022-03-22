@@ -108,8 +108,9 @@ testing_dataset/*
 # checkpoint
 checkpoints/*
 
-#
+# result and logs
 **/results/
+**/logs/
 
 # config
 # *.yaml

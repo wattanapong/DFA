@@ -64,5 +64,7 @@ class TestOptions(BaseOptions):
                             help='interpolate template size')
         parser.add_argument('--model_search', action='store_true',
                             help='generate noise in search style')
+        parser.add_argument('--skip_exist', action='store_true',
+                            help='skip testing when video exists ')
 
         return parser

@@ -11,6 +11,9 @@ create new environment from requirements.yaml
 ```
 conda env create --file requirements.yml
 conda activate dfa
+
+python setup.py build_ext --inplace
+
 ```
 
 ## Download SiamRPN++ pretrained

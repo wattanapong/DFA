@@ -7,7 +7,7 @@
                       chk: 24                            	[default: 1]
                 crop_size: 256                           
                  dataroot: ./pix2pix/datasets/facades    
-                  dataset: OTB100                        
+                  dataset: GOT-10k                       	[default: OTB100]
               dataset_dir: /4T/dataset/TrackingTest      	[default: /media/wattanapongsu/4T/dataset]
              dataset_mode: aligned                       
                 direction: AtoB                          

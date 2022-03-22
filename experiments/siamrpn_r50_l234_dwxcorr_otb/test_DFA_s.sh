@@ -11,7 +11,7 @@ for i in ${const[*]};
 
         CUDA_VISIBLE_DEVICES=0  python -u \
            ../../tools/test_DFA.py --cfg ../siamrpn_r50_l234_dwxcorr_otb/config_DFA.yaml \
-           --dataset OTB100 \
+           --dataset GOT-10k \
           --dataset_dir /4T/dataset/TrackingTest \
            --snapshot /4T/models/pysot/siamrpn_r50_otb_model.pth \
            --model_name enc_5e2_512 --k $i --ks 2.0 --chk $j --z_size 512\

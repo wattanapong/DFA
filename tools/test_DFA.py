@@ -71,11 +71,13 @@ parser.add_argument('--search_attack', action='store_true',
                             help='attack search image')
 parser.add_argument('--z_size', type=int, default=128,
                             help='interpolate template size')
+parser.add_argument('--skip_exist', action='store_true',
+                            help='skip testing when video exists ')
 parser.add_argument('--model_search', action='store_true',
                             help='generate noise in search style')
 
 args = parser.parse_args()
-
+torch.set_num_threads(8)
 
 def seed_torch(seed=0):
     random.seed(seed)
@@ -145,6 +147,22 @@ def stoa_track(idx, frame_counter, img, gt_bbox, tracker, savedir, attacker=None
 
 
 def test(video, tracker, model_name, savedir, v_idx, num_video, attacker=None):
+
+    # skip if exist
+    if args.skip_exist and args.dataset not in ['VOT2016', 'VOT2018', 'VOT2019']:
+        model_path = os.path.join('results', args.dataset, model_name)
+        if not os.path.isdir(model_path):
+            os.makedirs(model_path)
+        result_path = os.path.join(model_path, '{}.txt'.format(video.name))
+    elif args.skip_exist :
+        video_path = os.path.join('results', args.dataset, model_name,
+                                  'baseline', video.name)
+        if not os.path.exists(video_path):
+            os.makedirs(video_path)
+        result_path = os.path.join(video_path, '{}_001.txt'.format(video.name))
+    
+    if  args.skip_exist and os.path.exists(result_path):
+        return  0, 0
 
     # set writing video parameters
     height, width, channels = video[0][0].shape
@@ -291,7 +309,8 @@ def main():
         else:
             extra = '_ts'
     else:
-        extra = '_t'
+        if args.k != 0:
+            extra = '_t'
     model_name += extra+'_e' + str(args.chk) + '_k' + str(args.k)
     # if args.k != 1:
     #     model_name += '_k' + str(args.k)
@@ -348,6 +367,9 @@ def main():
             img_names = [x for x in video.img_names]
 
             _mae, maes = test(video, tracker, model_name, video_saved_dir, v_idx, len(dataset), attacker)
+
+            if _mae == 0 and maes == 0:
+                continue
 
             if args.search_attack:
                 maes_path = os.path.join(savedir, video.name + '.txt')

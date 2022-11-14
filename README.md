@@ -21,7 +21,7 @@ python setup.py build_ext --inplace
  - Change pretrained name as siamrpn_r50_otb_model.pth
 
 ## Download Our pretrained DFA model
- - We only support google site, access [here](https://drive.google.com/file/d/1Vy49AdqLsCre_OONWC7KQDsXJDbPSoDX/view?usp=sharing). 
+ - We only support google site, access [here](https://drive.google.com/file/d/1a5-dK2qsLQHqzQl6BkzMag9G1BQUmsKH/view?usp=share_link). 
  
 ## Download dataset
  - We only share biker frames and json of [OTB100 dataset](https://drive.google.com/drive/folders/10H_DNcP-adPoYPqdx-PrmxRwcXlpnu6i?usp=sharing) . You can download full download from providing dataset source. 
@@ -35,7 +35,9 @@ bash test_dfa.sh
 ```
 
 ## Example results of our DFA model
-You can access from [google link](https://drive.google.com/drive/folders/1Mu4gSLezScd7JCbjhEkvNAa9I1Mg_amI?usp=sharing).
+You can access:
+[1. DFA + SiamRPN++](https://drive.google.com/drive/folders/1aka675kSCt5FtSPubq_e3MQ9Ww7ctfXp?usp=sharing)
+[2. DFA transferability](https://drive.google.com/drive/folders/1L_UvBPqVWTYM2Z5HQNVnaNWz3cFUgUKB?usp=sharing)
 
 ## License
 PySOT is released under the [Apache 2.0 license](https://github.com/wattanapong/DFA/blob/main/LICENSE).

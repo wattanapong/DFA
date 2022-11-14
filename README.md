@@ -1,4 +1,6 @@
-## The DFA was published in Neurocomputing 2022. If our work is benefit to you please cite this reference.
+## Reference
+The DFA was published in Neurocomputing 2022. If our work is benefit to you please cite this reference.
+
 [Diminishing-feature attack: The adversarial infiltration on visual tracking.](https://www.sciencedirect.com/science/article/pii/S0925231222010633) Suttapak, Wattanapong, Jianfu Zhang, and Liqing Zhang. Neurocomputing 509 (2022): 21-33. Neurocomputing.
 
 ## Resource requirements
